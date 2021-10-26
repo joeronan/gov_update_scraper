@@ -13,8 +13,9 @@ Open a command window and run the shell script `run.sh`. When prompted, type eit
 Python:
 - `pandas`
 - `xml.etree.ElementTree`
+
 Command Line:
-- gdate
+- `gdate`
 
 ## SOURCES:
 - [ONS Releases](https://www.ons.gov.uk/releasecalendar)
