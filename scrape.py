@@ -63,6 +63,8 @@ def _gov_stat_res(page_num: int, data_list: list):
         f'https://www.gov.uk/search/research-and-statistics.atom?content_store_document_type=statistics_published&page={page_num}')
     root = ElementTree.fromstring(r.text)
 
+    terminate = False
+
     for entry in root.findall('{http://www.w3.org/2005/Atom}entry'):
 
         entry_date = datetime.fromisoformat(entry.find(
@@ -97,6 +99,8 @@ def _ons(page_num: int, data_list: list):
     if page_num > 10:
         print('TOO MANY CALLS TO ONS')
         return data_list
+
+    terminate = False
 
     r = requests.get(
         f'https://www.ons.gov.uk/releasecalendar?rss&page={page_num}')
